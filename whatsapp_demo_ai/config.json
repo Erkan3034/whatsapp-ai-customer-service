@@ -1,0 +1,25 @@
+{
+    "company_name": "Mehmet Perde Sistemleri",
+    "products": [
+        "stor perde",
+        "zebra perde",
+        "pilise perde",
+        "jaluzi perde",
+        "panel perde",
+        "blackout perde"
+    ],
+    "price_range": "500 - 1500 TL",
+    "delivery_time": "3-5 iş günü",
+    "contact": {
+        "phone": "0212 555 0123",
+        "email": "info@mehmetperde.com",
+        "address": "Bursa, Türkiye"
+    },
+    "tone": "samimi ve güven veren",
+    "working_hours": "Pazartesi-Cumartesi 09:00-18:00",
+    "services": [
+        "ücretsiz ölçüm",
+        "profesyonel montaj",
+        "garantili hizmet"
+    ]
+}
