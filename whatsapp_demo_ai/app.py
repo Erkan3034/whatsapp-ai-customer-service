@@ -184,5 +184,9 @@ if __name__ == "__main__":
     print("📝 API endpoint: http://localhost:5000/chat")
     print("💡 .env dosyasına TOGETHER_API_KEY=sk-yourkey ekleyin")
     
+    # Production'da PORT environment variable kullan
+    port = int(os.environ.get("PORT", 5000))
+    debug_mode = os.environ.get("FLASK_ENV") != "production"
+    
     # Flask uygulamasını başlat
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=debug_mode, host="0.0.0.0", port=port)
