@@ -180,6 +180,9 @@ def company_info():
 if __name__ == "__main__":
     print("🤖 Yapay Zeka Chatbot Demo Sistemi Başlatılıyor...")
     print("🌐 Chat arayüzü: http://localhost:5000")
+    print("🌍 Yerel ağ: http://192.168.172.46:5000")
     print("📝 API endpoint: http://localhost:5000/chat")
     print("💡 .env dosyasına TOGETHER_API_KEY=sk-yourkey ekleyin")
+    
+    # Flask uygulamasını başlat
     app.run(debug=True, host="0.0.0.0", port=5000)

@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
  * Chat sistemini başlat
  */
 function initializeChat() {
-    // Enter tuşu ile mesaj gönder
-    messageInput.addEventListener('keypress', function(e) {
+    // Enter tuşu ile mesaj gönder (Shift+Enter ile yeni satır)
+    messageInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             sendMessage();
@@ -121,7 +121,7 @@ function addBotMessage(message) {
 }
 
 /**
- * Mesaj elementi oluştur
+ * WhatsApp tarzı mesaj elementi oluştur
  * @param {string} text - Mesaj metni
  * @param {string} type - Mesaj tipi ('user' veya 'bot')
  * @returns {HTMLElement} - Mesaj elementi
@@ -130,19 +130,21 @@ function createMessageElement(text, type) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${type}`;
 
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'message-content';
-    contentDiv.textContent = text;
+    const bubbleDiv = document.createElement('div');
+    bubbleDiv.className = 'message-bubble';
+    bubbleDiv.textContent = text;
 
-    // Zaman damgası ekle
-    const timestamp = new Date().toLocaleTimeString('tr-TR', {
+    const timeDiv = document.createElement('div');
+    timeDiv.className = 'message-time';
+    const now = new Date();
+    timeDiv.textContent = now.toLocaleTimeString('tr-TR', {
         hour: '2-digit',
         minute: '2-digit'
     });
 
-    contentDiv.setAttribute('title', `Gönderilme zamanı: ${timestamp}`);
+    bubbleDiv.appendChild(timeDiv);
+    messageDiv.appendChild(bubbleDiv);
 
-    messageDiv.appendChild(contentDiv);
     return messageDiv;
 }
 
