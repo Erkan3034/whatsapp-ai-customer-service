@@ -41,7 +41,7 @@ FLASK_DEBUG=True
 ```
 
 ### 4. Firma Bilgilerini Düzenleyin (İsteğe Bağlı)
-`config.json` dosyasını kendi firma bilgilerinize göre düzenleyin:
+`config.json` dosyasını kendi firma bilgilerinize göre düzenleyebilsiniz:
 ```json
 {
   "company_name": "Sizin Firma Adınız",
